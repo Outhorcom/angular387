@@ -1,0 +1,4 @@
+<cm-header></cm-header>
+<div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
+  <cm-course-card (titleClicked)="courseTitleSelect($event)" fxFlex="100%" *ngFor="let course of courses" [course]="course" [recenica]="'recenica'"></cm-course-card>
+</div>
