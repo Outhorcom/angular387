@@ -17,10 +17,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
   addNewClickedEvent() {
     this.addNewClicked.emit(this.title);
-    console.log('REAKCIJA NA CLICK EVENT: Trenutni page je: ' + this.title);
+    console.log('REAKCIJA NA CLICK EVENT: Trenutni content view je: ' + this.title);
   }
   getPageTitle(titleFromRoute) {
-    // Znam da je ovo nesiguran nacin da se postavi naslov, ali sam htio vidjeti kako bi islo sa dinamicnim vrijednostima
     if (titleFromRoute === '/') {
       titleFromRoute = ('home').toUpperCase();
     } else if (titleFromRoute === '/home') {
@@ -31,7 +30,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     return titleFromRoute;
   }
   ngOnDestroy() {
-    console.log('Header component distroyed');
+    console.log('Header component destroyed');
     this.addNewClicked.unsubscribe();
   }
 

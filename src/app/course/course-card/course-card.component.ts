@@ -21,14 +21,7 @@ export class CourseCardComponent implements OnInit, OnDestroy {
   titleClickedEvent() {
     this.titleClicked.emit(this.course.name);
   }
-  // showCourseInfo() {
-  //   console.log('clicked');
-  //   if (this.recenica === 'recenica') {
-  //     console.log('rended');
-  //   }
-  // }
   ngOnDestroy() {
-    console.log('component distroyed');
     this.titleClicked.unsubscribe();
   }
 
